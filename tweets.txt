@@ -37335,6 +37335,6 @@ zunub  Appears:  1
 zur  Appears:  1
 zwei  Appears:  1
 zwykle  Appears:  1
-The number of unique words are 27438.
-Total number of words are 134559002.
-Lexical Diversity is equal to 4904.
+The number of unique words are 37337.
+Total number of words are 134558842.
+Lexical Diversity is equal to 3603.

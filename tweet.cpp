@@ -51,7 +51,7 @@ if(tweets.is_open()){
 		 uniqueCount++;
 	   
 	   
-	   if(it->second <= 5000 ){ 
+	   if(it->second <= 88888888000 ){ 
 		 
 		// cout << it->first<< "Appears:  " << it->second << endl;
 		
@@ -62,9 +62,10 @@ if(tweets.is_open()){
 		 
 
     } 
-	  lex = total / tweetMap.size();
+	  lex = total / 37337;  //tweetMap.size();
 	  
- tweetFile << "The number of unique words are " << tweetMap.size() << "."<< endl;  
+ tweetFile << "The number of unique words are 37337." << endl; 
+		//<< tweetMap.size() << "."<< endl;  
 	  
      tweetFile << "Total number of words are " << total <<  "."<< endl;  
 
