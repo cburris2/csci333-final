@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 using std::string;
@@ -13,35 +14,51 @@ using std::endl;
 
 int main() {
 
-//int counter;
 
-//string tweetArray[5];
-
+string tweetLine;
 map <string,int> tweetMap; 
 
-string line;
+map<string,int>::iterator it;
+string line,subLine;
 
 ifstream tweets ("tweets"); /* ifstream for input, read tweets file*/
 if(tweets.is_open()){
     
-    while(tweets.good()){
+     while(tweets.good()){
 
     
 
-     getline (tweets,line);
-     cout << line << endl;
+		 getline(tweets,line,' ');
+
+		 if(tweetMap.count(line) >= 1){
+		 tweetMap[line]++;
+		 }
+		 else {
+		 tweetMap.insert(pair<string,int>(line,1));
+		 }
 
 
     }
     tweets.close();
 
+}
+
+    
+    for(it = tweetMap.begin(); it != tweetMap.end(); it++){
+	  
+		 if(it->second <= 5000 ){ 
+		 
+		 cout << it->first<< "Appears:  " << it->second << endl;
+
+
+		 }
+		 
+
+    }
     
 
 
 
-
-}
-else{ cout << "Unable to open file." << endl; }
 
 return 0;
 
