@@ -13,14 +13,14 @@ using std::endl;
 
 
 int main() {
-ofstream tweetFile;
+ofstream tweetFile,lexFile;
 
 string tweetLine;
 map <string,int> tweetMap; 
 
 map<string,int>::iterator it;
-string line,subLine;
-int uniqueCount,total;
+string line;
+int uniqueCount = 0;
 double lex;
 ifstream tweets ("tweets"); /* ifstream for input, read tweets file*/
 if(tweets.is_open()){
@@ -36,7 +36,6 @@ if(tweets.is_open()){
 		 }
 		 else {
 		 tweetMap.insert(pair<string,int>(line,1));
-		 total++;
 		 }
 
 
@@ -47,33 +46,40 @@ if(tweets.is_open()){
 	  tweetFile.open("tweets.txt");
     
     for(it = tweetMap.begin(); it != tweetMap.end(); it++){
-	  
-		 uniqueCount++;
 	   
-	   
-	   if(it->second <= 88888888000 ){ 
+	   if(it->second <= 8000 ){ 
 		 
-		// cout << it->first<< "Appears:  " << it->second << endl;
-		
 		tweetFile << it->first << "  Appears:  " << it->second << endl;
      
           }
 		 
 		 
 
-    } 
-	  lex = total / 37337;  //tweetMap.size();
-	  
- tweetFile << "The number of unique words are 37337." << endl; 
-		//<< tweetMap.size() << "."<< endl;  
-	  
-     tweetFile << "Total number of words are " << total <<  "."<< endl;  
+    }
 
-	  tweetFile << "Lexical Diversity is equal to " << lex << "." << endl;  
+
+
+    for(it = tweetMap.begin(); it != tweetMap.end(); it++){
+	   
+		uniqueCount += it->second;	
+     
+    } 
+
 
 	  tweetFile.close();
 
 
+
+	  lexFile.open("lex.txt");
+	  lex = uniqueCount / 37337; 
+	  
+ lexFile << "The number of unique words are 37337." << endl; 
+	  
+     lexFile << "Total number of words are " << uniqueCount << "."<< endl;  
+
+	  lexFile << "Lexical Diversity is equal to " << lex << "." << endl;  
+
+	  lexFile.close();
 
 
 return 0;

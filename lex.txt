@@ -1,0 +1,3 @@
+The number of unique words are 37337.
+Total number of words are 87591.
+Lexical Diversity is equal to 2.

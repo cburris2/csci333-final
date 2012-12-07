@@ -37336,5 +37336,5 @@ zur  Appears:  1
 zwei  Appears:  1
 zwykle  Appears:  1
 The number of unique words are 37337.
-Total number of words are 134558842.
-Lexical Diversity is equal to 3603.
+Total number of words are 87591.
+Lexical Diversity is equal to 9.
