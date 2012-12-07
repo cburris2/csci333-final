@@ -13,9 +13,9 @@ using std::endl;
 
 int main() {
 
-int counter;
+//int counter;
 
-string tweetArray[5];
+//string tweetArray[5];
 
 map <string,int> tweetMap; 
 
