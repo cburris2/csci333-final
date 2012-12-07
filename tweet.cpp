@@ -20,7 +20,7 @@ map <string,int> tweetMap;
 
 map<string,int>::iterator it;
 string line,subLine;
-int uniqueCount;
+int uniqueCount,total;
 double lex;
 ifstream tweets ("tweets"); /* ifstream for input, read tweets file*/
 if(tweets.is_open()){
@@ -36,6 +36,7 @@ if(tweets.is_open()){
 		 }
 		 else {
 		 tweetMap.insert(pair<string,int>(line,1));
+		 total++;
 		 }
 
 
@@ -47,23 +48,25 @@ if(tweets.is_open()){
     
     for(it = tweetMap.begin(); it != tweetMap.end(); it++){
 	  
+		 uniqueCount++;
+	   
+	   
 	   if(it->second <= 5000 ){ 
 		 
 		// cout << it->first<< "Appears:  " << it->second << endl;
 		
 		tweetFile << it->first << "  Appears:  " << it->second << endl;
      
-		uniqueCount++;
           }
 		 
 		 
 
     } 
-	  lex = uniqueCount / tweetMap.size();
+	  lex = total / tweetMap.size();
 	  
- tweetFile << "The number of unique words are " << uniqueCount << "."<< endl;  
+ tweetFile << "The number of unique words are " << tweetMap.size() << "."<< endl;  
 	  
-     tweetFile << "Total number of words are " << tweetMap.size() << "."<< endl;  
+     tweetFile << "Total number of words are " << total <<  "."<< endl;  
 
 	  tweetFile << "Lexical Diversity is equal to " << lex << "." << endl;  
 
